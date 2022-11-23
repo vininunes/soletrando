@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "standard-with-typescript",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+
+  "parserOptions": {
+    "project": ["tsconfig.json", "vite.config.ts"],
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "eslint-plugin-import-helpers",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/prefer-default-export": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          ["parent", "sibling", "index"],
+          "/^@/assets/",
+          "/^@/atomic/atom/",
+          "/^@/atomic/molecule/",
+          "/^@/atomic/organism/",
+          "/^@/atomic/template/",
+          "/^@/config/",
+          "/^@/constants/",
+          "/^@/controller/",
+          "/^@/helpers/",
+          "/^@/hooks/",
+          "/^@/models/",
+          "/^@/services/",
+          "/^@/store/",
+          "/^@/styles/",
+          "/^./styles/",
+          "/^./helpers/",
+          "/^./types/"
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  }
+}
